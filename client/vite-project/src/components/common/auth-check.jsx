@@ -20,7 +20,7 @@ function AuthCheck({ isAuthenticated, user, children }) {
     if (user?.role === "user") {
       return <Navigate to="/shop/home" />;
     } else {
-      return <Navigate to="/admin/dashbord" />;
+      return <Navigate to="/admin/dashboard" />;
     }
   }
   if (
@@ -35,7 +35,7 @@ function AuthCheck({ isAuthenticated, user, children }) {
     user?.role === "admin" &&
     location.pathname.includes("/shop")
   ) {
-    return <Navigate to="/admin/dashbord" />;
+    return <Navigate to="/admin/dashboard" />;
   }
   return <> {children}</>;
 }

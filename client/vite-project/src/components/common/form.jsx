@@ -16,11 +16,12 @@ function CommonForm({
   setFormData,
   onSubmit,
   buttonText,
+  isBtnDisabled,
 }) {
   function renderInput(getControlItem) {
     let element = null;
     const value = formData[getControlItem.name] || "";
-    switch (getControlItem.compnentType) {
+    switch (getControlItem.componentType) {
       case "input":
         element = (
           <Input
@@ -67,21 +68,20 @@ function CommonForm({
             value={value}
           >
             <SelectTrigger className="w-full">
-              <SelectValue placeholder={getControlItem.placeholder} />
+              <SelectValue placeholder={getControlItem.label} />
             </SelectTrigger>
             <SelectContent>
               {getControlItem.options && getControlItem.options.length > 0
-                ? getControlItem.options.map((selectItem) => {
-                    <SelectItem key={selectItem.id} value={selectItem.id}>
-                      {selectItem.label}
-                    </SelectItem>;
-                  })
+                ? getControlItem.options.map((optionItem) => (
+                    <SelectItem key={optionItem.id} value={optionItem.id}>
+                      {optionItem.label}
+                    </SelectItem>
+                  ))
                 : null}
             </SelectContent>
           </Select>
         );
         break;
-
       default:
         element = (
           <Input
@@ -112,11 +112,10 @@ function CommonForm({
           </div>
         ))}
       </div>
-      ;
-      <Button type="submit" className="w-full mt-2">
+
+      <Button disabled={isBtnDisabled} type="submit" className="w-full mt-2">
         {buttonText || "Submit"}
       </Button>
-      ;
     </form>
   );
 }
