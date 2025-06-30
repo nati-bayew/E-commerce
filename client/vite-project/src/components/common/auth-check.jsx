@@ -3,6 +3,18 @@ import { Navigate, useLocation } from "react-router-dom";
 function AuthCheck({ isAuthenticated, user, children }) {
   const location = useLocation();
 
+  if (location.pathname === "/") {
+    if (!isAuthenticated) {
+      return <Navigate to="/auth/login" />;
+    } else {
+      if (user?.role === "user") {
+        return <Navigate to="/shop/home" />;
+      } else {
+        return <Navigate to="/admin/dashboard" />;
+      }
+    }
+  }
+
   if (
     !isAuthenticated &&
     !(

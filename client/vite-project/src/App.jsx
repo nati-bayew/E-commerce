@@ -35,6 +35,15 @@ function App() {
     <div className="flex flex-col overflow-hidden bg-white">
       <Routes>
         <Route
+          path="/"
+          element={
+            <AuthCheck
+              isAuthenticated={isAuthenticated}
+              user={user}
+            ></AuthCheck>
+          }
+        />
+        <Route
           path="/auth"
           element={
             <AuthCheck isAuthenticated={isAuthenticated} user={user}>

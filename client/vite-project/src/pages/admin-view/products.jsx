@@ -88,7 +88,7 @@ function AdminProducts() {
     <Fragment>
       <div
         onClick={() => setOpenNewProduct(true)}
-        className=" w-full flex justify-end "
+        className=" w-full flex justify-end mb-4"
       >
         <Button>Add New Product</Button>
       </div>

@@ -109,6 +109,11 @@ export const headerMenuItems = [
     path: "/shop/home",
   },
   {
+    id: "products",
+    label: "Products",
+    path: "/shop/items",
+  },
+  {
     id: "men",
     label: "Men",
     path: "/shop/items",
@@ -136,14 +141,14 @@ export const headerMenuItems = [
 ];
 
 export const selectOptions = {
-  Category: [
+  category: [
     { id: "men", label: "Men" },
     { id: "women", label: "Women" },
     { id: "kid", label: "Kid" },
     { id: "accessories", label: "Accessories" },
     { id: "footwear", label: "Footwear" },
   ],
-  Brand: [
+  brand: [
     { id: "nike", label: "Nike" },
     { id: "adidas", label: "Adidas" },
     { id: "puma", label: "Puma" },
@@ -158,4 +163,28 @@ export const sortOptions = [
   { id: "price-lowtohigh", label: "Price: Low to High" },
   { id: "title-atoz", label: "Title: A to Z" },
   { id: "title-ztoa", label: "Title: Z to A" },
+];
+
+export const addressFormControl = [
+  {
+    label: "Address",
+    name: "address",
+    componentType: "input",
+    type: "text",
+    placeholder: "Enter your address",
+  },
+  {
+    label: "City",
+    name: "city",
+    componentType: "input",
+    type: "text",
+    placeholder: "Enter your city",
+  },
+  {
+    label: "Phone",
+    name: "phone",
+    componentType: "input",
+    type: "text",
+    placeholder: "Enter your phone number",
+  },
 ];

@@ -6,7 +6,7 @@ const {
   featchProduct,
   updateProduct,
   deleteProduct,
-} = require("../../controler/admin/products-controller");
+} = require("../../controller/admin/products-controller");
 const { upload } = require("../../config/cloudinary");
 
 const router = express.Router();

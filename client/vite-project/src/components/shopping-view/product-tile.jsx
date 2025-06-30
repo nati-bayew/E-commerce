@@ -2,15 +2,19 @@ import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import { Card, CardContent, CardFooter } from "../ui/card";
 
-function ShoppingProductTile({ product }) {
+function ShoppingProductTile({
+  product,
+  handleProductDetail,
+  handleAddToCart,
+}) {
   return (
-    <Card>
-      <div>
+    <Card className="m-3 p-0">
+      <div onClick={() => handleProductDetail(product._id)}>
         <div className="relative">
           <img
-            src={product.image}
-            alt={product.title}
-            className="w-full object-cover h-[200px] rounded-t-lg "
+            src={product?.image}
+            alt={product?.title}
+            className="w-full mt-0 h-[200px] rounded-t-lg "
           />
           {product.salePrice ? (
             <Badge className="absolute top-2 left-2 bg-red-500 hover:bg-red-400">
@@ -18,7 +22,7 @@ function ShoppingProductTile({ product }) {
             </Badge>
           ) : null}
         </div>
-        <CardContent>
+        <CardContent className="">
           <h2 className="text-xl font-bold mb-2 ">{product.title}</h2>
           <div className="flex items-center justify-between mb-2">
             <span className="text-muted-foreground text-[16px]">
@@ -43,10 +47,15 @@ function ShoppingProductTile({ product }) {
             ) : null}
           </div>
         </CardContent>
-        <CardFooter>
-          <Button className="w-full">Add to Cart</Button>
-        </CardFooter>
       </div>
+      <CardFooter>
+        <Button
+          onClick={() => handleAddToCart(product._id)}
+          className="w-full mb-2"
+        >
+          Add to Cart
+        </Button>
+      </CardFooter>
     </Card>
   );
 }
