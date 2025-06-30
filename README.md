@@ -4,4 +4,8 @@ Project Setup Instructions
   git clone https://github.com/nati-bayew/E-commerce.git
 
  2. Getting Started  
-  npm run dev
+   go to the folder name cd..
+ 3. Start the frontend  
+    npm run dev
+4. Start the backend  
+   npm run dev make sure you are in the right folder
